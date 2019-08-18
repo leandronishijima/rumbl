@@ -124,4 +124,10 @@ defmodule Rumbl.Multimedia do
   def change_video(%Video{} = video) do
     Video.changeset(video, %{})
   end
+
+  def list_alphabetical_categories do
+    Category
+    |> Category.alphabetical()
+    |> Repo.all()
+  end
 end
